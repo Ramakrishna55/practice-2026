@@ -1,6 +1,5 @@
-FROM ubuntu:22.04
+FROM eclipse-temurin:21-jdk-jammy
 
-COPY hello.sh /hello.sh
-RUN chmod +x /hello.sh
+COPY target/my-app-1.0-SNAPSHOT.jar app.jar
 
-CMD ["/hello.sh"]
+ENTRYPOINT ["java","-jar","/app.jar"]
